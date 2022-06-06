@@ -18,7 +18,7 @@ from Music.config import MONGO_DB_URI as smex
 
 @app.on_message(filters.command("mstats") & ~filters.edited)
 async def gstats(_, message):
-    m = await message.reply_text("**Getting Stats**\n\nPlease wait for some time..")
+    m = await message.reply_text("**Ngeliat Statistik**\n\nBentar nyet 🦍..")
     served_chats = []
     chats = await get_served_chats()
     for chat in chats:
@@ -46,7 +46,7 @@ async def gstats(_, message):
     free = (hdd.free / (1024.0 ** 3))
     free = str(free)
     msg = f"""
-**Global Stats Of Music Bot**:\n\n
+**Statistik Global Bot Musik**:\n\n
 [•]<u>__**System Stats**__</u>
 **Music Uptime:** {uptime}
 **System Process:** Online
@@ -58,7 +58,7 @@ async def gstats(_, message):
 **Pyrogram Version:** {pyrover}
 **PyTgCalls Version:** {pytover.__version__}
 
-[•]<u>__**Bot Music Stats**__</u>
+[•]<u>__**Statistik Bot Musik**__</u>
 **Modules Loaded:** {modules_count}
 **GBanned Users:** {blocked}
 **Sudo Users:** {j}
