@@ -25,9 +25,9 @@ Disk: {disk}%
 async def ping(_, message):
     uptime = await bot_sys_stats()
     start = datetime.now()
-    response = await message.reply_text("ping...")
+    response = await message.reply_text("piu piu 🦍...")
     end = datetime.now()
     resp = (end - start).microseconds / 1000
     await response.edit(
-        f"**Pong!**\n`⚡{resp} ms`\n\n<b><u>Statistik Sistem Musik:</u></b>{uptime}"
+        f"**Eh Babu!**\n`🦍{resp} ms`\n\n<b><u>Statistik Sistem Bot:</u></b>{uptime}"
     )
