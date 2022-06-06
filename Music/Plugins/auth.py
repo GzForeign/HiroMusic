@@ -16,7 +16,7 @@ async def auth(_, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             await message.reply_text(
-                "Reply to a user's message or give username/user_id."
+                "Reply ke pesan pengguna atau bagi username/user_id."
             )
             return
         user = message.text.split(None, 1)[1]
@@ -33,7 +33,7 @@ async def auth(_, message: Message):
             count += 1
         if int(count) == 20:
             return await message.reply_text(
-                "You can only have 20 Users In Your Groups Authorised Users List (AUL)"
+                "Lu cuma bisa punya 20 pengguna Di daftar pengguna good looking di gece lu (AUL)"
             )
         if token not in _check:
             assis = {
@@ -44,11 +44,11 @@ async def auth(_, message: Message):
             }
             await save_authuser(message.chat.id, token, assis)
             await message.reply_text(
-                f"Added to Authorised Users List of this group."
+                f"Ditambahin ke daftar pengguna good loking di gece ini."
             )
             return
         else:
-            await message.reply_text(f"Already in the Authorised Users List.")
+            await message.reply_text(f"Udah ada di daftar pengguna good looking.")
         return
     from_user_id = message.from_user.id
     user_id = message.reply_to_message.from_user.id
@@ -61,7 +61,7 @@ async def auth(_, message: Message):
         count += 1
     if int(count) == 20:
         return await message.reply_text(
-            "You can only have 20 Users In Your Groups Authorised Users List (AUL)"
+            "Lu cuma bisa punya 20 pengguna Di daftar pengguna good looking di gece lu (AUL)"
         )
     if token not in _check:
         assis = {
@@ -72,11 +72,11 @@ async def auth(_, message: Message):
         }
         await save_authuser(message.chat.id, token, assis)
         await message.reply_text(
-            f"Added to Authorised Users List of this group."
+            f"Ditambahin ke daftar pengguna good looking di gece ini."
         )
         return
     else:
-        await message.reply_text(f"Already in the Authorised Users List.")
+        await message.reply_text(f"Udah ada di daftar pengguna good looking.")
 
 
 @app.on_message(filters.command("unauth") & filters.group)
@@ -85,7 +85,7 @@ async def whitelist_chat_func(_, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             await message.reply_text(
-                "Reply to a user's message or give username/user_id."
+                "Reply ke pesan pengguna atau bagi username/user_id."
             )
             return
         user = message.text.split(None, 1)[1]
@@ -96,19 +96,19 @@ async def whitelist_chat_func(_, message: Message):
         deleted = await delete_authuser(message.chat.id, token)
         if deleted:
             return await message.reply_text(
-                f"Removed from Authorised Users List of this Group."
+                f"Dihapus dari daftar pengguna good looking di gece ini."
             )
         else:
-            return await message.reply_text(f"Not an Authorised User.")
+            return await message.reply_text(f"Gada di daftar good looking.")
     user_id = message.reply_to_message.from_user.id
     token = await int_to_alpha(user_id)
     deleted = await delete_authuser(message.chat.id, token)
     if deleted:
         return await message.reply_text(
-            f"Removed from Authorised Users List of this Group."
+            f"Dihapus dari daftar pengguna good looking di gece ini."
         )
     else:
-        return await message.reply_text(f"Not an Authorised User.")
+        return await message.reply_text(f"Gada di daftar good looking.")
 
 
 @app.on_message(filters.command("authusers") & filters.group)
@@ -116,14 +116,14 @@ async def authusers(_, message: Message):
     _playlist = await get_authuser_names(message.chat.id)
     if not _playlist:
         return await message.reply_text(
-            f"No Authorised Users in this Group.\n\nAdd Auth users by /auth and remove by /unauth."
+            f"Gada pengguna good looking di gece ini.\n\nTambahin pengguna good looking dengan /auth dan hapus dengan /unauth."
         )
     else:
         j = 0
         m = await message.reply_text(
-            "Fetching Authorised Users... Please Wait"
+            "Lokit Pengguna Good Looking... Tunggu Nyet"
         )
-        msg = f"**Authorised Users List[AUL]:**\n\n"
+        msg = f"**Daftar Pengguna Good Looking[AUL]:**\n\n"
         for note in _playlist:
             _note = await get_authuser(message.chat.id, note)
             user_id = _note["auth_user_id"]
@@ -137,5 +137,5 @@ async def authusers(_, message: Message):
             except Exception:
                 continue
             msg += f"{j}➤ {user}[`{user_id}`]\n"
-            msg += f"    ┗ Added By:- {admin_name}[`{admin_id}`]\n\n"
+            msg += f"    ┗ Ditambahin oleh:- {admin_name}[`{admin_id}`]\n\n"
         await m.edit_text(msg)
