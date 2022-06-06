@@ -27,7 +27,7 @@ async def theme_func(_, message):
         try:
             await app.send_message(
                 x,
-                "Music has just restarted herself. Sorry for the issues.\n\nStart playing after 10-15 seconds again.",
+                "Bot Musik Habis Berak. Sorry ya bwang.\n\nMulai setel lagi sehabis 10-15 detik.",
             )
         except Exception:
             pass
@@ -43,7 +43,7 @@ async def theme_func(_, message):
             await remove_active_chat(served_chat)
         except Exception as e:
             await message.reply_text(f"{e}")
-    x = await message.reply_text(f"__Restarting Music!__")
+    x = await message.reply_text(f"__Memulai Ulang Musik!__")
     await start_restart_stage(x.chat.id, x.message_id)
     os.execvp(
         f"python{str(pyver.split(' ')[0])[:3]}",
