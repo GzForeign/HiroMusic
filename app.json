@@ -1,8 +1,8 @@
 {
     "name": "NEEHH-MUSIC",
-    "description": "Music allow you to stream music trought the telegram voice chat feature.",
+    "description": "Bot to stream music trought the telegram voice chat feature.",
     "keywords": ["music", "voice chat", "telegram"],
-    "repository": "https://github.com/Neehh/HiroMusic",
+    "repository": "https://github.com/GzForeign/HiroMusic",
     "stack": "container",
     "env": {
         "SESSION_NAME": {
@@ -12,7 +12,7 @@
         "OWNER_ID": {
             "description": "fill with your telegram id as the owner of the bot",
             "required": true,
-            "value": "1821140802"
+            "value": "1855672890"
         },
         "ASS_ID": {
             "description": "fill with telegram id of account",
@@ -42,7 +42,7 @@
         "DURATION_LIMIT": {
             "description": "filled, don't change this !",
             "required": true,
-            "value": "50000"
+            "value": "40000"
         },
         "BOT_TOKEN": {
             "description": "fill with your bot token get from @BotFather on telegram",
@@ -57,17 +57,17 @@
         "GROUP": {
             "description": "Masukin Username Group Anda Ga Pake @",
             "required": true,
-            "value": "hiroosupport"
+            "value": "tegediskusirasa"
         }, 
         "CHANNEL": {
             "description": "Masukin Username Channel Anda Ga Pake @",
             "required": true,
-            "value": "hiroshimabes"
+            "value": "grzmusik"
         },
         "MUST_JOIN": {
             "description": "Masukin Username Channel Fsub Anda Pake @",
             "required": true,
-            "value": "@Keluhanhiroo"
+            "value": "@grzmusik"
         }
     },
     "buildpacks": [
