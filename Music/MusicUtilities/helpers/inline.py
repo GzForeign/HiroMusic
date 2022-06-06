@@ -15,7 +15,7 @@ def play_markup(videoid, user_id):
             InlineKeyboardButton(text="ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"),
         ],
         [      
-            InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f"close"),
+            InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f"close"),
             InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ​​", url=f"https://t.me/{CHANNEL}"),  
         ],
     ]
@@ -36,10 +36,10 @@ def others_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="⇩ ᴜɴᴅᴜʜ ᴀᴜᴅɪᴏ", callback_data=f"gets audio|{videoid}|{user_id}"
+                text="ᴜɴᴅᴜʜ ᴀᴜᴅɪᴏ", callback_data=f"gets audio|{videoid}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="⇩ ᴜɴᴅᴜʜ ᴠɪᴅᴇᴏ", callback_data=f"gets video|{videoid}|{user_id}"
+                text="ᴜɴᴅᴜʜ ᴠɪᴅᴇᴏ", callback_data=f"gets video|{videoid}|{user_id}"
             ),
         ],
         [
@@ -117,7 +117,7 @@ def search_markup(
                 text="⪻", callback_data=f"popat 2|{query}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}"
+                text="ᴛᴜᴛᴜᴘ", callback_data=f"ppcl2 smex|{user_id}"
             ),
          InlineKeyboardButton(
                 text="⪼", callback_data=f"popat 1|{query}|{user_id}"
@@ -166,7 +166,7 @@ def search_markup2(
                 text="⪻", callback_data=f"popat 2|{query}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}"
+                text="ᴛᴜᴛᴜᴘ", callback_data=f"ppcl2 smex|{user_id}"
             ),
             InlineKeyboardButton(
                 text="⪼", callback_data=f"popat 1|{query}|{user_id}"
@@ -188,7 +188,7 @@ start_keyboard = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                "📚 ᴅᴀꜰᴛᴀʀ ᴘᴇʀɪɴᴛᴀʜ​ 📚", url="https://telegra.ph/Hiroshi-12-28-2"
+                "📚 ᴅᴀꜰᴛᴀʀ ᴘᴇʀɪɴᴛᴀʜ​ 📚", url="https://telegra.ph/Gz-12-28-2"
             )
         ],
         [InlineKeyboardButton("ᴛᴜᴛᴜᴘ", callback_data="close2")],
@@ -312,7 +312,7 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    "➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs",
+                    "➕ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
@@ -322,7 +322,7 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    "➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴏs",
+                    "➕ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴏs",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
@@ -337,7 +337,7 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    "➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs",
+                    "➕ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
@@ -352,7 +352,7 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    "➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs",
+                    "➕ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
@@ -383,7 +383,7 @@ def setting_markup():
             ),
         ],
         [
-            InlineKeyboardButton(text="✖️ ᴄʟᴏsᴇ", callback_data="close"),
+            InlineKeyboardButton(text="✖️ ᴛᴜᴛᴜᴘ", callback_data="close"),
             InlineKeyboardButton(text="🔙 ʙᴀᴄᴋ", callback_data="okaybhai"),
         ],
     ]
