@@ -46,7 +46,7 @@ pstart_markup = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton("👥 Gece Mutualan", url=f"https://t.me/tegediskusirasa"),
-            InlineKeyboardButton("🎰 Gece Random", url=f"https://t.me/grzmusik"),
+            InlineKeyboardButton("🎰 Ceha Random", url=f"https://t.me/grzmusik"),
         ],
         [
             InlineKeyboardButton( 
