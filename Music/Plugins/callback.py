@@ -572,7 +572,7 @@ Personal Playlist Playing."""
                     a1,
                 ],
                 [
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f'close2')
+                    InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f'close2')
                 ]    
             ]
         )
@@ -719,7 +719,7 @@ Group Playlist Playing."""
                     a1,
                 ],
                 [
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f'close2')
+                    InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f'close2')
                 ]    
             ]
         )
@@ -871,7 +871,7 @@ async def P_list(_,CallbackQuery):
                 ],
                 [
                     a3,
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f'close2')
+                    InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f'close2')
                 ]    
             ]
         )
@@ -926,7 +926,7 @@ async def G_list(_,CallbackQuery):
                 ],
                 [
                     a3,
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f'close2')
+                    InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f'close2')
                 ]    
             ]
         )
@@ -959,7 +959,7 @@ async def cbgroupdel(_,CallbackQuery):
         titlex = []
         for note in _playlist:
             await delete_playlist(CallbackQuery.message.chat.id, note)
-    await CallbackQuery.message.reply_text("✅ Successfully deleted your Group's whole playlist")  
+    await CallbackQuery.message.reply_text("✅ Success deleted your Group's whole playlist")  
     
     
 @Client.on_callback_query(filters.regex("cbdel"))
@@ -973,4 +973,4 @@ async def delplcb(_,CallbackQuery):
         titlex = []
         for note in _playlist:
             await delete_playlist(CallbackQuery.from_user.id, note)
-    await CallbackQuery.message.reply_text("✅ Successfully deleted your whole playlist")
+    await CallbackQuery.message.reply_text("✅ Success deleted your whole playlist")
