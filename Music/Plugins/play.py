@@ -307,7 +307,7 @@ async def play(_, message: Message):
                 except Exception as e:
                     taken = "00:00"
                 size = d['_total_bytes_str']
-                mystic.edit(f"**Diunduh {title[:80]}.....**\n\n**Ukuran file:** {size}\n**Waktu Diambil:** {taken} sec\n\n**Mengonversi File** [__FFmpeg processing__]")
+                mystic.edit(f"**Diunduh {title[:80]}.....**\n\n**Ukuran file:** {size}\n**Waktu Diambil:** {taken} sec\n\n**Mengonversi File** [__Memproses FFmpeg__]")
                 print(f"[{videoid}] Perkiraan| Unduhan: {taken} detik")  
         loop = asyncio.get_event_loop()
         x = await loop.run_in_executor(None, download, link, my_hook)
