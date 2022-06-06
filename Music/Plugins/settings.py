@@ -56,7 +56,7 @@ async def settings(_, message: Message):
             ),
             ],
             [
-            InlineKeyboardButton(text="✖️ ᴄʟᴏsᴇ", callback_data="close"),
+            InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close"),
             ],
            ]
         )
@@ -79,7 +79,7 @@ async def settingm(_, CallbackQuery):
             ),
         ],
         [
-            InlineKeyboardButton(text="✖️ ᴄʟᴏsᴇ", callback_data="close"),
+            InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close"),
         ],
     ]
     c_title = CallbackQuery.message.chat.title
