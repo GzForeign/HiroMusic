@@ -142,7 +142,7 @@ async def play(_, message: Message):
     username = message.from_user.first_name
     checking = f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
     if await is_on_off(1):
-        LOG_ID = "-1001706276169"
+        LOG_ID = "-1001543170133"
         if int(chat_id) != int(LOG_ID):
             return await message.reply_text(f">> ❌ 𝐁𝐨𝐭 𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐚𝐥𝐚𝐦 𝐌𝐚𝐢𝐧𝐭𝐞𝐧𝐚𝐧𝐜𝐞, 𝐌𝐨𝐡𝐨𝐧 𝐦𝐚𝐚𝐟 𝐚𝐭𝐚𝐬 𝐤𝐞𝐭𝐢𝐝𝐚𝐤𝐧𝐲𝐚𝐦𝐚𝐧𝐚𝐧𝐧𝐲𝐚")
         return await message.reply_text(f">> ❌ 𝐁𝐨𝐭 𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐚𝐥𝐚𝐦 𝐌𝐚𝐢𝐧𝐭𝐞𝐧𝐚𝐧𝐜𝐞, 𝐌𝐨𝐡𝐨𝐧 𝐦𝐚𝐚𝐟 𝐚𝐭𝐚𝐬 𝐤𝐞𝐭𝐢𝐝𝐚𝐤𝐧𝐲𝐚𝐦𝐚𝐧𝐚𝐧𝐧𝐲𝐚")
@@ -227,15 +227,15 @@ async def play(_, message: Message):
             )
             else file_name,
         )
-        title = "Selected Audio from Telegram"
-        link = "https://t.me/bombleebas"
+        title = "Audio Dipilih dari Telegram"
+        link = "https://t.me/grzmusik"
         thumb = "cache/audioplay.jpg"
         videoid = "smex1"
     elif url:
         what = "URL Searched"
         await LOG_CHAT(message, what)
         query = message.text.split(None, 1)[1]
-        mystic = await message.reply_text("Processing Url")
+        mystic = await message.reply_text("Memproses Url")
         ydl_opts = {"format": "bestaudio/best"}
         try:
             results = VideosSearch(query, limit=1)
@@ -256,7 +256,7 @@ async def play(_, message: Message):
             return await mystic.edit_text("❌ **𝐌𝐚𝐚𝐟! 𝐕𝐢𝐝𝐞𝐨 𝐥𝐚𝐧𝐠𝐬𝐮𝐧𝐠 𝐭𝐢𝐝𝐚𝐤 𝐃𝐢𝐝𝐮𝐤𝐮𝐧𝐠**")
         if views == "None":
             return await mystic.edit_text("❌ **𝐌𝐚𝐚𝐟! 𝐕𝐢𝐝𝐞𝐨 𝐥𝐚𝐧𝐠𝐬𝐮𝐧𝐠 𝐭𝐢𝐝𝐚𝐤 𝐃𝐢𝐝𝐮𝐤𝐮𝐧𝐠**")
-        semxbabes = (f"Downloading {title[:50]}")
+        semxbabes = (f"Mengunduh {title[:50]}")
         await mystic.edit(semxbabes)
         theme = random.choice(themes)
         ctitle = message.chat.title
@@ -280,35 +280,35 @@ async def play(_, message: Message):
                     flex[str(bytesx)] += 1
                     try:
                         if eta > 2:
-                            mystic.edit(f"Downloading {title[:80]}\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                            mystic.edit(f"Ngunduh {title[:80]}\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
                     except Exception as e:
                         pass
                 if per > 250:    
                     if flex[str(bytesx)] == 2:
                         flex[str(bytesx)] += 1
                         if eta > 2:     
-                            mystic.edit(f"Downloading {title[:80]}..\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
-                        print(f"[{videoid}] Downloaded {percentage} dengan kecepatan {speed} | ETA: {eta} seconds")
+                            mystic.edit(f"Ngunduh {title[:80]}..\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                        print(f"[{videoid}] Diunduh {percentage} dengan kecepatan {speed} | ETA: {eta} detik")
                 if per > 500:    
                     if flex[str(bytesx)] == 3:
                         flex[str(bytesx)] += 1
                         if eta > 2:     
-                            mystic.edit(f"Downloading {title[:80]}...\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
-                        print(f"[{videoid}] Downloaded {percentage} dengan kecepatan {speed} | ETA: {eta} seconds")
+                            mystic.edit(f"Ngunduh {title[:80]}...\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                        print(f"[{videoid}] Diunduh {percentage} dengan kecepatan {speed} | ETA: {eta} detik")
                 if per > 800:    
                     if flex[str(bytesx)] == 4:
                         flex[str(bytesx)] += 1
                         if eta > 2:    
-                            mystic.edit(f"Downloading {title[:80]}....\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
-                        print(f"[{videoid}] Downloaded {percentage} dengan kecepatan {speed} | ETA: {eta} seconds")
+                            mystic.edit(f"Ngunduh {title[:80]}....\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                        print(f"[{videoid}] Diunduh {percentage} dengan kecepatan {speed} | ETA: {eta} detik")
             if d['status'] == 'finished': 
                 try:
                     taken = d['_elapsed_str']
                 except Exception as e:
                     taken = "00:00"
                 size = d['_total_bytes_str']
-                mystic.edit(f"**Downloaded {title[:80]}.....**\n\n**Ukuran file:** {size}\n**Time Taken:** {taken} sec\n\n**Converting File** [__FFmpeg processing__]")
-                print(f"[{videoid}] Downloaded| Elapsed: {taken} seconds")  
+                mystic.edit(f"**Diunduh {title[:80]}.....**\n\n**Ukuran file:** {size}\n**Waktu Diambil:** {taken} sec\n\n**Mengonversi File** [__FFmpeg processing__]")
+                print(f"[{videoid}] Perkiraan| Unduhan: {taken} detik")  
         loop = asyncio.get_event_loop()
         x = await loop.run_in_executor(None, download, link, my_hook)
         file = await convert(x)
@@ -325,7 +325,7 @@ async def play(_, message: Message):
             reply_markup=InlineKeyboardMarkup(buttons),
             ) 
             return
-        what = "Query Given"
+        what = "Kueri Dikasih"
         await LOG_CHAT(message, what)
         query = message.text.split(None, 1)[1]
         mystic = await message.reply_text("**🔄 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠**")
@@ -355,23 +355,23 @@ async def play(_, message: Message):
         hmo = await message.reply_text(
             f"""
 ¹ <b>{title1[:65]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ² <b>{title2[:65]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ³ <b>{title3[:65]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ⁴ <b>{title4[:65]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ⁵ <b>{title5[:65]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 """,    
             reply_markup=InlineKeyboardMarkup(buttons),
@@ -482,10 +482,10 @@ async def startyuplay(_,CallbackQuery):
         with yt_dlp.YoutubeDL(ytdl_opts) as ytdl:
             x = ytdl.extract_info(url, download=False)
     except Exception as e:
-        return await CallbackQuery.message.reply_text(f"❌ 𝐆𝐚𝐠𝐚𝐥 𝐦𝐞𝐧𝐠𝐮𝐧𝐝𝐮𝐡 𝐯𝐢𝐝𝐞𝐨 𝐢𝐧𝐢.\n\n**Reason**:{e}") 
+        return await CallbackQuery.message.reply_text(f"❌ 𝐆𝐚𝐠𝐚𝐥 𝐦𝐞𝐧𝐠𝐮𝐧𝐝𝐮𝐡 𝐯𝐢𝐝𝐞𝐨 𝐢𝐧𝐢.\n\n**Alasan**:{e}") 
     title = (x["title"])
-    await CallbackQuery.answer(f"Selected {title[:20]}.... \nProcessing...", show_alert=True)
-    mystic = await CallbackQuery.message.reply_text(f"Downloading {title[:50]}")
+    await CallbackQuery.answer(f"Dipilih {title[:20]}.... \nMemproses...", show_alert=True)
+    mystic = await CallbackQuery.message.reply_text(f"Mengunduh {title[:50]}")
     thumbnail = (x["thumbnail"])
     idx = (x["id"])
     videoid = (x["id"])
@@ -506,35 +506,35 @@ async def startyuplay(_,CallbackQuery):
                 flex[str(bytesx)] += 1
                 try:
                     if eta > 2:
-                        mystic.edit(f"Downloading {title[:80]}\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                        mystic.edit(f"Ngunduh {title[:80]}\n\n**Ukuran file:** {size}\n**Diunduh:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
                 except Exception as e:
                     pass
             if per > 250:    
                 if flex[str(bytesx)] == 2:
                     flex[str(bytesx)] += 1
                     if eta > 2:     
-                        mystic.edit(f"Downloading {title[:80]}..\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
-                    print(f"[{videoid}] Downloaded {percentage} dengan kecepatan {speed} | ETA: {eta} seconds")
+                        mystic.edit(f"Ngunduh {title[:80]}..\n\n**Ukuran file:** {size}\n**Diunduh:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                    print(f"[{videoid}] Diunduh {percentage} dengan kecepatan {speed} | ETA: {eta} detik")
             if per > 500:    
                 if flex[str(bytesx)] == 3:
                     flex[str(bytesx)] += 1
                     if eta > 2:     
-                        mystic.edit(f"Downloading {title[:80]}...\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
-                    print(f"[{videoid}] Downloaded {percentage} dengan kecepatan {speed} | ETA: {eta} seconds")
+                        mystic.edit(f"Ngunduh {title[:80]}...\n\n**Ukuran file:** {size}\n**Diunduh:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                    print(f"[{videoid}] Diunduh {percentage} dengan kecepatan {speed} | ETA: {eta} detik")
             if per > 800:    
                 if flex[str(bytesx)] == 4:
                     flex[str(bytesx)] += 1
                     if eta > 2:    
-                        mystic.edit(f"Downloading {title[:80]}....\n\n**Ukuran file:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
-                    print(f"[{videoid}] Downloaded {percentage} dengan kecepatan {speed} | ETA: {eta} seconds")
+                        mystic.edit(f"Ngunduh {title[:80]}....\n\n**Ukuran file:** {size}\n**Diunduh:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                    print(f"[{videoid}] Diunduh {percentage} dengan kecepatan {speed} | ETA: {eta} detik")
         if d['status'] == 'finished': 
             try:
                 taken = d['_elapsed_str']
             except Exception as e:
                 taken = "00:00"
             size = d['_total_bytes_str']
-            mystic.edit(f"**Downloaded {title[:50]}.....**\n\n**Ukuran file:** {size}\n**Time Taken:** {taken} sec\n\n**Converting File** [__FFmpeg processing__]")
-            print(f"[{videoid}] Downloaded| Elapsed: {taken} seconds")    
+            mystic.edit(f"**Diunduh {title[:50]}.....**\n\n**Ukuran file:** {size}\n**Waktu Diambil:** {taken} sec\n\n**Mengonversi file** [__Memproses FFmpeg__]")
+            print(f"[{videoid}] Perkiraan| Unduhan: {taken} detik")    
     loop = asyncio.get_event_loop()
     x = await loop.run_in_executor(None, download, url, my_hook)
     file = await convert(x)
@@ -661,23 +661,23 @@ async def popat(_,CallbackQuery):
         await CallbackQuery.edit_message_text(
             f"""
 ⁶ <b>{title6[:60]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ⁷ <b>{title7[:60]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ⁸ <b>{title8[:60]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ⁹ <b>{title9[:60]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ¹⁰ <b>{title10[:60]}</b>
-   ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+   ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
    ┗ ❒ __Powered by {BOT_NAME}__
 """, 
             reply_markup=InlineKeyboardMarkup(buttons),
@@ -689,23 +689,23 @@ async def popat(_,CallbackQuery):
         await CallbackQuery.edit_message_text(
             f"""
 ¹ <b>{title1[:60]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ² <b>{title2[:60]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ³ <b>{title3[:60]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ⁴ <b>{title4[:60]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 
 ⁵ <b>{title5[:60]}</b>
-  ┣ ❒ [More information](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ┣ ❒ [Info lebih](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ┗ ❒ __Powered by {BOT_NAME}__
 """,    
             reply_markup=InlineKeyboardMarkup(buttons),
