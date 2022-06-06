@@ -1,5 +1,5 @@
 #### NEEHH MUSIK 🎼
-#### **Deploy Aja Gausah Banyak Bacot Ngentot Tinggal Deploy Gw Entot Juga Lu Lama Lama**
+
 <p align="center">
 
 ### DEPLOY HEROKU TOL!
