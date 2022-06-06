@@ -26,7 +26,7 @@ def subcribe(func):
                         f"**ʜᴀʟʟᴏ {rpk}. ᴀɢᴀʀ ʙɪsᴀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ᴀɴᴅᴀ ʜᴀʀᴜs ᴍᴀsᴜᴋ ᴋᴇ ᴄʜᴀɴɴᴇʟ ᴜᴘᴅᴀᴛᴇs ʙᴏᴛ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ!. sɪʟᴀʜᴋᴀɴ ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴊᴏɪɴ ᴋᴇ ᴄʜᴀɴɴᴇʟ ᴜᴘᴅᴀᴛᴇ**",
                         disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
-                            [[InlineKeyboardButton("🏷 Join Channel", url=link)]]
+                            [[InlineKeyboardButton("🥵 Join Sayang", url=link)]]
                         ),
                     )
                     await message.stop_propagation()
