@@ -36,7 +36,7 @@ async def broadcast_message_pin(_, message):
                 sent += 1
             except Exception:
                 pass
-        await message.reply_text(f"✅ **Pesan yang disiarkan di {sent} obrolan\n\n📌 dengan {pin} pin.**")  
+        await message.reply_text(f"✅ **Gikes pesan di {sent} obrolan\n\n📌 dengan {pin} pin.**")  
         return
     if len(message.command) < 2:
         await message.reply_text("**Penggunaan**:\n/broadcast (message)")
@@ -60,7 +60,7 @@ async def broadcast_message_pin(_, message):
             sent += 1
         except Exception:
             pass
-    await message.reply_text(f"✅ **Pesan yang disiarkan di {sent} obrolan\n📌 dengan {pin} pin.**")
+    await message.reply_text(f"✅ **Gikes pesan di {sent} obrolan\n📌 dengan {pin} pin.**")
 
 
 @app.on_message(filters.command("broadcast") & filters.user(OWNER))
@@ -82,11 +82,11 @@ async def broadcast_message_nopin(_, message):
                 sent += 1
             except Exception:
                 pass
-        await message.reply_text(f"✅ **Pesan yang disiarkan dalam {sent} obrolan")
+        await message.reply_text(f"✅ **Gikes pesan di {sent} obrolan")
         return
     if len(message.command) < 2:
         await message.reply_text(
-            "**usage**:\n/broadcast (message)"
+            "**penggunaan**:\n/broadcast (message)"
         )
         return
     text = message.text.split(None, 1)[1]
@@ -102,4 +102,4 @@ async def broadcast_message_nopin(_, message):
             sent += 1
         except Exception:
             pass
-    await message.reply_text(f"✅ **Pesan yang disiarkan dalam {sent} obrolan")
+    await message.reply_text(f"✅ **Gikes pesan di {sent} obrolan")
