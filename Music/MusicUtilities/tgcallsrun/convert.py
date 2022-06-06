@@ -34,8 +34,8 @@ async def convert(file_path: str) -> str:
         await proc.communicate()
 
         if proc.returncode != 0:
-            raise FFmpegReturnCodeError("FFmpeg did not return 0")
+            raise FFmpegReturnCodeError("FFmpeg not 0")
 
         return out
     except:
-        raise FFmpegReturnCodeError("FFmpeg did not return 0")
+        raise FFmpegReturnCodeError("FFmpeg not 0")
