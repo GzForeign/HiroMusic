@@ -21,20 +21,20 @@ Client(
 ).start()
 
 
-print(f"[INFO]: BOT STARTED AS {BOT_NAME}!")
-print(f"[INFO]: ASSISTANT STARTED AS {ASSNAME}!")
+print(f"[INFO]: BOT DIMULAI SEBAGAI {BOT_NAME}!")
+print(f"[INFO]: ASISTEN DIMULAI SEBAGAI {ASSNAME}!")
 
 
 
 async def load_start():
     restart_data = await clean_restart_stage()
     if restart_data:
-        print("[INFO]: SENDING RESTART STATUS")
+        print("[INFO]: NGIRIM STATUS RESTART")
         try:
             await app.edit_message_text(
                 restart_data["chat_id"],
                 restart_data["message_id"],
-                "**Restarted the Bot Successfully.**",
+                "**Sukses mulai ulang Bot.**",
             )
         except Exception:
             pass
@@ -44,15 +44,15 @@ async def load_start():
         for chat in chats:
             served_chats.append(int(chat["chat_id"]))
     except Exception as e:
-        print("Error came while clearing db")
+        print("Error while clearing db")
     for served_chat in served_chats:
         try:
             await remove_active_chat(served_chat)                                         
         except Exception as e:
-            print("Error came while clearing db")
+            print("Error while clearing db")
             pass     
-    await app.send_message(LOG_GROUP_ID, "Bot Musik Sudah Aktif Kontol..")
-    await client.send_message(LOG_GROUP_ID, "Assistant Sudah Aktif Kontol..")
+    await app.send_message(LOG_GROUP_ID, "Musik Aktif..")
+    await client.send_message(LOG_GROUP_ID, "Asisten Aktif..")
     print("[INFO]: STARTED")
     
    
