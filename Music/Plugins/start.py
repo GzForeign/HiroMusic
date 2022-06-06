@@ -25,15 +25,15 @@ from pyrogram.types import (
 def start_pannel():
     buttons = [
         [
-            InlineKeyboardButton("👥 Official Group", url=f"https://t.me/hiroosupport"),
-            InlineKeyboardButton("🎰 Official Channel", url=f"https://t.me/hiroshimabes"),
+            InlineKeyboardButton("👥 Gece Mutualan", url=f"https://t.me/tegediskusirasa"),
+            InlineKeyboardButton("🎰 Ceha Random", url=f"https://t.me/grzmusik"),
         ],
         [
-            InlineKeyboardButton("📖 Commands", url=f"https://telegra.ph/Turbo-05-28"),
+            InlineKeyboardButton("📖 Daftar Perintah", url=f"https://telegra.ph/Mas-Gz-06-06"),
         ],
     ]
     return (
-        "🎛 **{BOT_NAME} Merupakan salah satu dari bot telegram yang bisa memutar musik di grup**",
+        "🎛 **{BOT_NAME} salah satu bot telegram yang bisa muter musik di grup**",
         buttons,
     )
 
@@ -42,19 +42,19 @@ pstart_markup = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                "➕ Add Me To You Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                "➕ Masukin gua ke Gece lu ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
         ],
         [
-            InlineKeyboardButton("👥 Official Group", url=f"https://t.me/hiroosupport"),
-            InlineKeyboardButton("🎰 Official Channel", url=f"https://t.me/hiroshimabes"),
+            InlineKeyboardButton("👥 Gece Mutualan", url=f"https://t.me/tegediskusirasa"),
+            InlineKeyboardButton("🎰 Gece Random", url=f"https://t.me/grzmusik"),
         ],
         [
             InlineKeyboardButton( 
-                "🤴 Developer", url=f"https://t.me/xcarfaceall"),
-            InlineKeyboardButton("📖 Commands", url="https://telegra.ph/Turbo-05-28"),
+                "🤴 Wih Oner Bot", url=f"https://t.me/teleidgz"),
+            InlineKeyboardButton("📖 Daftar Perintah", url="https://telegra.ph/Mas-Gz-06-06"),
         ],
         [
-            InlineKeyboardButton("↪️ Support Group ↩️", url=f"https://t.me/privateical"),
+            InlineKeyboardButton("↪️ Gece Dukungan ↩️", url=f"https://t.me/tegediskusirasa"),
         ],
     ]
 )
@@ -69,11 +69,11 @@ async def welcome(_, message: Message):
         try:
             if member.id in OWNER:
                 return await message.reply_text( 
-                    f"💡 Developer Bot [{member.mention}] Baru Saja Bergabung Di Group Ini"
+                    f"🦍 Oner Bot [{member.mention}] Baru aja Gabung Di Gece Ini"
                 )
             if member.id in SUDOERS: 
                 return await message.reply_text(
-                    f"💡 Admin Bot [{member.mention}] Baru Saja Bergabung Di Group Ini"
+                    f"👤 Etmin Bot [{member.mention}] Baru aja Gabung Di Gece Ini"
                 )
             if member.id == ASSID:
                 await remove_active_chat(chat_id) 
@@ -81,9 +81,9 @@ async def welcome(_, message: Message):
                 out = start_pannel()
                 await message.reply_text(
                     f"""
-👋 **Hallo Senang Rasanya Bisa Bergabung Di Group Ini**
+👋 **Hallo Sedih Rasanya Bisa Gabung Di Gece Ini**
 
-💡 **Jangan Lupa Untuk Menjadikan Saya Sebagai Admin Di Group Ini**
+💡 **Jangan Lupa Untuk Jadiin Gua Admin Di Gece Ini**
 """, 
                     reply_markup=InlineKeyboardMarkup(out[1]),
                     disable_web_page_preview=True
@@ -104,10 +104,10 @@ async def start(_, message: Message):
     out = start_pannel()
     await message.reply_text(
         f"""
-Terimakasih Telah Memasukkan Saya Di Group {message.chat.title}.
-Music Telah Online. 
+Makasih Udah Masukin Gua Di Gece {message.chat.title}.
+Musik nya Hidup Bwang. 
 
-Untuk Bantuan Silahkan Klik Tombol Dibawah ⬇
+Info Bantuan Silahkan Klik Tombol Dibawah ⬇
 """, 
         reply_markup=InlineKeyboardMarkup(out[1]),
         disable_web_page_preview=True
@@ -124,14 +124,14 @@ async def play(_, message: Message):
         await app.send_message(
             message.chat.id,
             text=f"""
-**✨ Halo, Nama saya {rpk}!
+**🦍 Halo, Nama gua {rpk}!
 
-💬 Saya Adala [{BOT_NAME}](t.me/{BOT_USERNAME}) Group Music Voice Chat Dengan Fitur Yang Sangat Menarik
+💬 Gua [{BOT_NAME}](t.me/{BOT_USERNAME}) Bot Musik Telegram dengan Segudang Fitur Eh Dikit Doang Sih 🗿
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-• Version 7.9 Last
-• Fell Free Add To Your Group
+• Versi 7.9 Mutakhir
+• Rasakan Kegalauan, Masukin Gua di Gece
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-➛ Tekan Tombol Command Untuk Mengetahui Fitur Menarik Dari [{BOT_NAME}](t.me/{BOT_USERNAME})**
+➛ Tekan Tombol Command Buat Tahu Fitur Menarik Gua [{BOT_NAME}](t.me/{BOT_USERNAME})**
 
 """,
             parse_mode="markdown",
@@ -152,7 +152,7 @@ async def play(_, message: Message):
                 x = ytdl.extract_info(query, download=False)
             thumbnail = x["thumbnail"]
             searched_text = f"""
-🔍 **Video Track Information**
+🔍 **Informasi Trek Video**
 
 ❇️**Judul:** {x["title"]}
 
@@ -162,7 +162,7 @@ async def play(_, message: Message):
 👎 **Tidak suka:** `{x["dislike_count"]}`
 ⭐️ **Peringkat Rata-rata:** {x["average_rating"]}
 🎥 **Nama channel:** {x["uploader"]}
-📎 **Channel Link:** [Kunjungi Dari Sini]({x["channel_url"]})
+📎 **Link Channel:** [Kunjungi Dari Sini]({x["channel_url"]})
 🔗 **Link:** [Link]({x["webpage_url"]})
 """
             link = x["webpage_url"]
@@ -178,7 +178,7 @@ async def play(_, message: Message):
             )
         if str(finxx) == "sud":
             sudoers = await get_sudoers()
-            text = "**📝 DAFTAR PENGGUNA SUDO**\n\n"
+            text = "**👤 DAFTAR PENGGUNA SUDO**\n\n"
             for count, user_id in enumerate(sudoers, 1):
                 try:
                     user = await app.get_users(user_id)
@@ -187,6 +187,6 @@ async def play(_, message: Message):
                     continue
                 text += f"- {user}\n"
             if not text:
-                await message.reply_text("Tidak Ada Pengguna Sudo")
+                await message.reply_text("Gada Pengguna Sudo Bwang")
             else:
                 await message.reply_text(text)
