@@ -115,8 +115,8 @@ async def mpthree(_, message: Message):
     if message.sender_chat:
         return await message.reply_text(
             """
-Anda adalah Admin Anonim!
-Kembalikan ke Akun Pengguna Dari Hak Admin.
+Lu Admin Anonim!
+Balik ke Akun Pengguna Yang Admin.
 """
         )
     user_id = message.from_user.id
@@ -127,7 +127,7 @@ Kembalikan ke Akun Pengguna Dari Hak Admin.
     url = get_url(message)
     if url:
         query = message.text.split(None, 1)[1]
-        mystic = await message.reply_text("Sedang memproses")
+        mystic = await message.reply_text("Gi Proses")
         ydl_opts = {"format": "bestaudio/best"}
         try:
             results = VideosSearch(query, limit=1)
@@ -140,7 +140,7 @@ Kembalikan ke Akun Pengguna Dari Hak Admin.
                 (result["id"])
                 videoid = result["id"]
         except Exception as e:
-            return await mystic.edit_text(f"Soung Not Found.\n**Possible Reason:**{e}")
+            return await mystic.edit_text(f"Lagu Ga Ketemu.\n**Alasannya Paling:**{e}")
         smex = int(time_to_seconds(duration))
         if smex > DURATION_LIMIT:
             return await mystic.edit_text(
@@ -155,7 +155,7 @@ Kembalikan ke Akun Pengguna Dari Hak Admin.
         m = await message.reply_text(
             f"""
 <b>🏷️ **Nama** :</b> [{title[:50]}]({url})
-<b>💡</b> [Developer](https://t.me/{BOT_USERNAME}?start=info_{id})
+<b>🦍</b> [Wih Ngeri Dev](https://t.me/{BOT_USERNAME}?start=info_{id})
 """,
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -166,11 +166,11 @@ Kembalikan ke Akun Pengguna Dari Hak Admin.
                 """
 **Penggunaan:**
 
-/song atau /vsong [Judul Lagu Atau Youtube Link] - untuk mendownload lagu dan video
+/song atau /vsong [Judul Lagu Atau Youtube Link] - buat download lagu dan video
 """
             )
         query = message.text.split(None, 1)[1]
-        mystic = await message.reply_text("**🔎 Pencarian**")
+        mystic = await message.reply_text("**🔎 Mencari**")
         try:
             a = VideosSearch(query, limit=5)
             result = (a.result()).get("result")
@@ -191,7 +191,7 @@ Kembalikan ke Akun Pengguna Dari Hak Admin.
             ID5 = (result[4]["id"])
         except Exception as e:
             return await mystic.edit_text(
-                f"Lagu Tidak Ditemukan.\\in**Kemungkinan Alasan:**{e}")
+                f"Lagu Ga Ketemu.\\in**Alasannya Paling:**{e}")
         thumb ="cache/IMG_20211201_214925_953.jpg"
         await mystic.delete()
         buttons = search_markup(
@@ -210,26 +210,26 @@ Kembalikan ke Akun Pengguna Dari Hak Admin.
         )
         hmo = await message.reply_text(
             f"""
-<b>✨ sɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ᴍᴀɴᴀ ʟᴀɢᴜ ʏᴀɴɢ ɪɴɢɪɴ ʟᴜ ᴅᴏᴡɴʟᴏᴀᴅ</b>
+<b>🦍 sɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ʟᴀɢᴜ ʏᴀɴɢ ᴍᴀᴜ ʟᴜ ᴅᴏᴡɴʟᴏᴀᴅ</b>
 
 ¹ <b>{title1[:50]}</b>
   ╠ ❒ [ᴅᴇᴠᴇʟᴏᴘᴇʀ](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ╚ ❒ **{BOT_NAME}**
 
 ² <b>{title2[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID2})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID2})
   ╚ ❒ **{BOT_NAME}**
 
 ³ <b>{title3[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID3})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID3})
   ╚ ❒ **{BOT_NAME}**
 
 ⁴ <b>{title4[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID4})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID4})
   ╚ ❒ **{BOT_NAME}**
 
 ⁵ <b>{title5[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID5})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID5})
   ╚ ❒ **{BOT_NAME}**
 """,
             reply_markup=InlineKeyboardMarkup(buttons),
@@ -248,7 +248,7 @@ async def startyuplay(_, CallbackQuery):
         id, duration, user_id = callback_request.split("|")
     except Exception as e:
         return await CallbackQuery.message.edit(
-            f"Error Occured\n**Possible reason could be**:{e}"
+            f"Error Gatau\n**Alasannya Paling**:{e}"
         )
     if duration == "None":
         return await CallbackQuery.message.reply_text(
@@ -256,7 +256,7 @@ async def startyuplay(_, CallbackQuery):
         )
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "This is not for you! Search You Own Song nigga", show_alert=True
+            "Ini bukan buat lu! Cari lagu lu sendiri tol", show_alert=True
         )
     await CallbackQuery.message.delete()
     checking = f"[{CallbackQuery.from_user.first_name}](tg://user?id={userid})"
@@ -273,11 +273,11 @@ async def startyuplay(_, CallbackQuery):
             x = ytdl.extract_info(url, download=False)
     except Exception as e:
         return await CallbackQuery.message.reply_text(
-            f"Failed to download this video.\n\n**Reason**:{e}"
+            f"Gagal ngunduh video ini.\n\n**Alasan**:{e}"
         )
     title = x["title"]
     await CallbackQuery.answer(
-        f"Selected {title[:50]}.... \nProcessing..", show_alert=True
+        f"Dipilih {title[:50]}.... \nMemproses..", show_alert=True
     )
     thumbnail = x["thumbnail"]
     (x["id"])
@@ -289,7 +289,7 @@ async def startyuplay(_, CallbackQuery):
         reply_markup=InlineKeyboardMarkup(buttons),
         caption=f"""
 <b>🏷️ **Nama** :</b> [{title[:50]}]({url})
-╚ 💡 [Developer](https://t.me/{BOT_USERNAME}?start=info_{id})
+╚ 🦍 [Wih Ngeri Dev](https://t.me/{BOT_USERNAME}?start=info_{id})
 """,
     )
     os.remove(thumb)
@@ -306,11 +306,11 @@ async def chonga(_, CallbackQuery):
         id, query, user_id = callback_request.split("|")
     except Exception as e:
         return await CallbackQuery.message.edit(
-            f"Error Occured\n**Possible reason could be**:{e}"
+            f"Error Gatau\n**Alasannya Paling**:{e}"
         )
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "This is not for you! Search You Own Song", show_alert=True
+            "Ini bukan buat lu! Cari Lagu Lu Sendiri Tol", show_alert=True
         )
     i = int(id)
     query = str(query)
@@ -348,7 +348,7 @@ async def chonga(_, CallbackQuery):
         ID9 = (result[8]["id"])
         ID10 = (result[9]["id"])                    
     except Exception as e:
-        return await mystic.edit_text(f"❌ Lagu Tidak Ditemukan\n**Possible Reason:**{e}")
+        return await mystic.edit_text(f"❌ Lagu Ga Ketemu\n**Alasannya Paling:**{e}")
     if i == 1:
         buttons = search_markup2(
             ID6,
@@ -366,26 +366,26 @@ async def chonga(_, CallbackQuery):
         )
         await CallbackQuery.edit_message_text(
             f"""
-<b>✨ sɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ᴍᴀɴᴀ ʟᴀɢᴜ ʏᴀɴɢ ɪɴɢɪɴ ʟᴜ ᴅᴏᴡɴʟᴏᴀᴅ</b>
+<b>🦍 sɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ʟᴀɢᴜ ʏᴀɴɢ ᴍᴀᴜ ʟᴜ ᴅᴏᴡɴʟᴏᴀᴅ</b>
 
 ⁶ <b>{title6[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID6})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID6})
   ╚ ❒ **{BOT_NAME}**
 
 ⁷ <b>{title7[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID7})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID7})
   ╚ ❒ **{BOT_NAME}**
 
 ⁸ <b>{title8[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID8})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID8})
   ╚ ❒ **{BOT_NAME}**
 
 ⁹ <b>{title9[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID9})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID9})
   ╚ ❒ **{BOT_NAME}**
 
 ¹⁰ <b>{title10[:50]}</b>
-   ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID10})
+   ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID10})
    ╚ ❒ **{BOT_NAME}**
 """,
             reply_markup=InlineKeyboardMarkup(buttons),
@@ -396,26 +396,26 @@ async def chonga(_, CallbackQuery):
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         await CallbackQuery.edit_message_text(
             f"""
-<b>✨ sɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ᴍᴀɴᴀ ʟᴀɢᴜ ʏᴀɴɢ ɪɴɢɪɴ ʟᴜ ᴅᴏᴡɴʟᴏᴀᴅ</b>
+<b>🦍 sɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ʟᴀɢᴜ ʏᴀɴɢ ᴍᴀᴜ ʟᴜ ᴅᴏᴡɴʟᴏᴀᴅ</b>
 
 ¹ <b>{title1[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID1})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID1})
   ╚ ❒ **{BOT_NAME}**
 
 ² <b>{title2[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID2})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID2})
   ╚ ❒ **{BOT_NAME}**
 
 ³ <b>{title3[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID3})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID3})
   ╚ ❒ **{BOT_NAME}**
 
 ⁴ <b>{title4[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID4})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID4})
   ╚ ❒ **{BOT_NAME}**
 
 ⁵ <b>{title5[:50]}</b>
-  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴋᴏɴᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID5})
+  ╠ ❒ [ᴋᴇᴘᴏ ʟᴜ ᴛᴏʟ](https://t.me/{BOT_USERNAME}?start=info_{ID5})
   ╚ ❒ **{BOT_NAME}**
 """,
             reply_markup=InlineKeyboardMarkup(buttons),
@@ -437,7 +437,7 @@ def search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, dura
             [ 
                 
                 InlineKeyboardButton(text="<<", callback_data=f'chonga 2|{query}|{user_id}'), 
-                InlineKeyboardButton(text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}") ,
+                InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f"ppcl2 smex|{user_id}") ,
                 InlineKeyboardButton(text=">>", callback_data=f'chonga 2|{query}|{user_id}')             
             ],
         ]
@@ -457,7 +457,7 @@ def search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, du
             [ 
                 
                 InlineKeyboardButton(text="<<", callback_data=f'chonga 2|{query}|{user_id}'), 
-                InlineKeyboardButton(text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}") ,
+                InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f"ppcl2 smex|{user_id}") ,
                 InlineKeyboardButton(text=">>", callback_data=f'chonga 2|{query}|{user_id}')             
             ],
         ]
@@ -466,11 +466,11 @@ def search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, du
 def gets(videoid, user_id):
     buttons= [
             [
-                InlineKeyboardButton(text="➷ Get Audio", callback_data=f'gets audio|{videoid}|{user_id}'),
-                InlineKeyboardButton(text="➷ Get Video", callback_data=f'gets video|{videoid}|{user_id}')
+                InlineKeyboardButton(text="Ambil Audio", callback_data=f'gets audio|{videoid}|{user_id}'),
+                InlineKeyboardButton(text="Ambil Video", callback_data=f'gets video|{videoid}|{user_id}')
             ],
             [
-                InlineKeyboardButton(text="🗑 Close Menu", callback_data=f'close2')
+                InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f'close2')
             ],
         ]
     return buttons
