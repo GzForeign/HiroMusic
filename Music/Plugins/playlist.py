@@ -108,7 +108,7 @@ async def pause_cmd(_, message):
     thumb ="cache/IMG_20211115_231128_845.jpg"
     await message.reply_photo(
     photo=thumb, 
-    caption=("**__Fitur Daftar Putar Musik__**\n\nPilih Daftar Putar, Anda ingin memeriksa!"),    
+    caption=("**__Fitur Daftar Putar Musik__**\n\nPilih Daftar Putar, Lu ingin memeriksa!"),    
     reply_markup=play_list_keyboard) 
     return 
 
@@ -141,7 +141,7 @@ async def pause_cmd(_, message):
                 if deleted:
                     return await message.reply_text(f"**Dihapus {count} musik di daftar putar**")
                 else:
-                    return await message.reply_text(f"**Tidak ada musik yang disimpan dalam daftar putar.**")                                
+                    return await message.reply_text(f"**Gada musik yang disimpan dalam daftar putar.**")                                
         await message.reply_text("Anda tidak memiliki musik seperti itu di Daftar Putar.")                             
 
         
@@ -149,7 +149,7 @@ async def pause_cmd(_, message):
 async def delgroupplaylist(_, message):
     a = await app.get_chat_member(message.chat.id , message.from_user.id)
     if not a.can_manage_voice_chats:
-        return await message.reply_text("Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\n**Permission:** __MANAGE VOICE CHATS__")
+        return await message.reply_text("Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\n**Izin:** __MANAGE VOICE CHATS__")
     usage = ("Usage:\n\n/delgroupplaylist [Numbers between 1-30] ( untuk menghapus musik tertentu dalam daftar putar )\n\nor\n\n /delgroupplaylist all ( untuk menghapus seluruh daftar putar )")
     if len(message.command) < 2:
         return await message.reply_text(usage)
@@ -163,7 +163,7 @@ async def delgroupplaylist(_, message):
     else:
          _playlist = await get_note_names(message.chat.id)
     if not _playlist:
-        await message.reply_text("Grup tidak memiliki Daftar Putar di Server Musik")
+        await message.reply_text("Gece tidak memiliki Daftar Putar di Server Musik")
     else:
         titlex = []
         j = 0
@@ -174,7 +174,7 @@ async def delgroupplaylist(_, message):
             if j == count:
                 deleted = await delete_playlist(message.chat.id, note)
                 if deleted:
-                    return await message.reply_text(f"**Dihapus {count} musik dalam daftar putar grup**")
+                    return await message.reply_text(f"**Dihapus {count} musik dalam daftar putar gece**")
                 else:
-                    return await message.reply_text(f"**Tidak ada musik yang disimpan seperti itu di daftar putar Grup.**")                                
-        await message.reply_text("Anda tidak memiliki musik seperti itu di Daftar Putar Grup.")
+                    return await message.reply_text(f"**Gada musik kek gitu yang disimpan di daftar putar Gece.**")                                
+        await message.reply_text("Anda tidak memiliki musik seperti itu di Daftar Putar Gece.")
