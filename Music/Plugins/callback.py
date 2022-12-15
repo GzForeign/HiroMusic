@@ -207,7 +207,7 @@ async def closesmex(_,CallbackQuery):
         await CallbackQuery.message.edit(f"❌ Terjadi kesalahan\n**Kemungkinan alasannya bisa**:{e}")
         return 
     if CallbackQuery.from_user.id != int(user_id):
-        await CallbackQuery.answer("❌ Anda tidak diizinkan untuk menutup ini", show_alert=True)
+        await CallbackQuery.answer("❌ Lu ga diizinin buat menutup ini", show_alert=True)
         return
     await CallbackQuery.message.delete()
     await CallbackQuery.answer()
