@@ -129,7 +129,7 @@ async def play(_, message: Message):
 💬 Gua [{BOT_NAME}](t.me/{BOT_USERNAME}) Bot Musik Telegram dengan Segudang Fitur Eh Dikit Doang Sih 🗿
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 • Versi 7.9 Mutakhir
-• Rasakan Kegalauan, Masukin Gua di Gece
+• Rasakan Rungkad, Masukin Gua di Gece
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ Tekan Tombol Command Buat Tahu Fitur Menarik Gua [{BOT_NAME}](t.me/{BOT_USERNAME})**
 
@@ -161,8 +161,8 @@ async def play(_, message: Message):
 👍 **Suka:** `{x["like_count"]}`
 👎 **Tidak suka:** `{x["dislike_count"]}`
 ⭐️ **Peringkat Rata-rata:** {x["average_rating"]}
-🎥 **Nama channel:** {x["uploader"]}
-📎 **Link Channel:** [Kunjungi Dari Sini]({x["channel_url"]})
+🎥 **Nama Ceha:** {x["uploader"]}
+📎 **Link Ceha:** [Kunjungi Dari Sini]({x["channel_url"]})
 🔗 **Link:** [Link]({x["webpage_url"]})
 """
             link = x["webpage_url"]
@@ -187,6 +187,6 @@ async def play(_, message: Message):
                     continue
                 text += f"- {user}\n"
             if not text:
-                await message.reply_text("Gada Pengguna Sudo Bwang")
+                await message.reply_text("Gada Pengguna Sudo Bang")
             else:
                 await message.reply_text(text)
